@@ -7,7 +7,7 @@ import Clues from './Clues';
 
 const Body = styled.div`
     width: 100%;
-    max-width: 100%;
+    max-width: 420px;
     padding-top: 20px;
     height: 100%;
     background: #969395;
