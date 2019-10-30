@@ -3,7 +3,7 @@ const getSecret = require("./secret");
 const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-const Data = require("./data");
+const Codes = require("./data");
 
 const API_PORT = 3001;
 const app = express();
@@ -22,18 +22,20 @@ router.get("/", (req, res) => {
   res.json({ message: "HELLOW WORLDUUHHHH" });
 });
 
-router.post("/checknum/:name", (req, res) => {
-  //res.json(req.params);
-  req.params.name === "one" ? res.json("fuck yeah") : res.json("fuck no")
-});
-
-router.post("/updateData", (req, res) => {
-  const { id, update } = req.body;
-  Data.findByIdAndUpdate(id, update, err => {
-    if (err) return res.json({ success: false, error: err });
-    return res.json({ success: true });
+router.get("/checknum/:name", (req, code) => {
+  Codes.find({name: req.param.name}, err => {
+    if (err) return code.json(err);
+    return code.json();
   });
 });
+
+router.post("/checknum/:name", (req, res) => {
+  //res.json(req.params);
+  //console.log(req.params.name)
+  req.params.name === "b" ? res.json(req.body) : res.json("fuck no")
+});
+
+
 
 router.delete("/deleteData", (req, res) => {
   const { id } = req.body;
