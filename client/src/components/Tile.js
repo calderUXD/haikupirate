@@ -23,12 +23,15 @@ const InputWrap = styled.div`
 
 const InputGroup = styled.div`
     position: relative;
+    display: flex;
+    flex-direction: ${props => props.direction === "x" ? "row" : "column"};
 `;
 
 const Input = styled.input`
     width: 30px;
     height: 30px;
-    margin-right: 7px;
+    ${props => props.direction !== "y" && "margin-right: 7px"};
+    ${props => props.direction === "y" && "margin-bottom: 7px"};
     background: transparent;
     border: transparent;
     color: #fff;
@@ -54,7 +57,7 @@ const Tile = ({slide}) => {
             {inputs !== null && 
                 <InputWrap position={position}>
                     <InputGroup direction={slide.inputs.direction}>
-                        {inputs.map((input, index) => <Input key={index} id={group + id} type="text" value="A" />)}
+                        {inputs.map((input, index) => <Input direction={slide.inputs.direction} key={index} id={group + id} type="text" value="A" />)}
                     </InputGroup>
                 </InputWrap>
             }
