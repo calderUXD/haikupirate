@@ -17,6 +17,8 @@ const Wrap = styled.div`
     right: 0;
     flex-grow: 1;
     align-content:stretch;
+    height: 30px;
+    z-index: 3;
 `;
 
 const Navigation = () => {

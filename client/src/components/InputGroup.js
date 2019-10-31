@@ -37,7 +37,8 @@ class InputGroup extends Component {
             3: "",
             4: "",
             5: "",
-            pass: ""
+            pass: "",
+            isValid: null
         }
 
     }
@@ -56,19 +57,35 @@ class InputGroup extends Component {
         }
     }
 
-    handelChange(e, id, group) {
+    handelChange(e, id, group, ctx) {
         this.setState({[id]: e.target.value});
         this.setState({pass: this.state.pass.concat(e.target.value)}, function () {
             if(this.state.pass.length === 5){
-                axios.post(`/api/checknum/${group}`, {pass: this.state.pass})
+                axios.post(`/api/validate/${group}`, {code: this.state.pass})
                     .then(res => {
-                        console.log(res);
-                        console.log(res.data);
+                        if(res.data === true){
+                            this.setState({isValid: true});
+                            ctx.updateState(group, this.state.pass);
+                            //ctx[group].code = this.state.pass;
+                            console.log(ctx.updateState);
+                        } else {
+                            this.setState({
+                                1: "",
+                                2: "",
+                                3: "",
+                                4: "",
+                                5: "",
+                                pass: "",
+                                isValid: false
+                            })
+                        }
                     })
             }
         });
-        if(id !== "5") {
-            this[`${group+ id}`].nextSibling.focus();
+        if(id === "5") {
+            this[`${group + id}`].blur();
+        } else {
+            this[`${group + id}`].nextSibling.focus();
         }
     }
 
@@ -90,13 +107,22 @@ class InputGroup extends Component {
                                     tabIndex={offset + (index + 1)}
                                     value={this.state[id]}
                                     onFocus={(e) => this.handelFocus(e, group)}
-                                    onChange={(e) => this.handelChange(e, id, group)}
+                                    onChange={(e) => this.handelChange(e, id, group, ctx)}
                                     ref={input => this[group + id] = input}
 
                                 />
+                                
                             )}
                         )}
-                           
+                           {this.state.isValid !== null && 
+                                <div>
+                                    {this.state.isValid === false ? 
+                                        <svg x="0px" y="0px" viewBox="0 0 95 118.75" enableBackground="new 0 0 95 95" style={{height:"50px", fill: "red"}}><path d="M73.3,19L73.3,19c3.2,3.2,3.2,8.4,0,11.5L30.9,73c-3.2,3.2-8.4,3.2-11.5,0l0,0c-3.2-3.2-3.2-8.4,0-11.5L61.8,19  C65,15.8,70.1,15.8,73.3,19z"/><path d="M73.3,73L73.3,73c-3.2,3.2-8.4,3.2-11.5,0L19.3,30.6c-3.2-3.2-3.2-8.4,0-11.5l0,0c3.2-3.2,8.4-3.2,11.5,0l42.4,42.4  C76.5,64.6,76.5,69.8,73.3,73z"/></svg> 
+                                    : 
+                                        <svg dataIcon="circle-check" viewBox="0 0 16 20" x="0px" y="0px" style={{height:"40px", fill: "green"}}><path d="M8 0c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm3 4.594l1.406 1.406-5.406 5.406-3.406-3.406 1.406-1.406 2 2 4-4z"/></svg>
+                                    }
+                                </div>
+                            }
                     </Inputs>
                 }
             </FormsConsumer>

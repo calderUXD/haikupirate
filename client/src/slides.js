@@ -15,7 +15,7 @@ const slides = [
     {
         image: "https://res.cloudinary.com/haikupirate/image/upload/v1572304282/three_wxijgx.png",
         inputs: {
-            position: ["40px", "33px"],
+            position: ["42px", "33px"],
             group: "b",
             offset: 5,
             direction: "y",
@@ -26,6 +26,7 @@ const slides = [
         inputs: {
             position: ["42px", "33px"],
             group: "c",
+            offset: 10,
             direction: "y",
             fields: [1,2,3,4,5]
         }
@@ -34,6 +35,7 @@ const slides = [
         inputs: {
             position: ["42px", "33px"],
             group: "d",
+            offset: 15,
             direction: "x",
             fields: [1,2,3,4,5]
         }
@@ -42,6 +44,7 @@ const slides = [
         inputs: {
             position: ["42px", "33px"],
             group: "e",
+            offset: 20,
             direction: "random",
             fields: [1,2,3,4,5]
         }

@@ -3,7 +3,7 @@ const getSecret = require("./secret");
 const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-const Codes = require("./data");
+const codesModel = require("./data");
 
 const API_PORT = 3001;
 const app = express();
@@ -11,6 +11,8 @@ const router = express.Router();
 
 mongoose.connect(getSecret("dbUri"));
 let db = mongoose.connection;
+
+//  console.log(db);
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
@@ -22,46 +24,46 @@ router.get("/", (req, res) => {
   res.json({ message: "HELLOW WORLDUUHHHH" });
 });
 
-router.get("/checknum/:name", (req, code) => {
-  Codes.find({name: req.param.name}, err => {
+router.get("/checknum/:name/:code", (req, res) => {
+  codesModel.find({}, (err, code) => {
     if (err) return code.json(err);
-    return code.json();
+    return res.json(code);
   });
 });
 
-router.post("/checknum/:name", (req, res) => {
-  //res.json(req.params);
-  //console.log(req.params.name)
-  req.params.name === "b" ? res.json(req.body) : res.json("fuck no")
-});
+router.get('/codes', async (req, res) => {
+  const codes = await codesModel.find({});
 
-
-
-router.delete("/deleteData", (req, res) => {
-  const { id } = req.body;
-  Data.findByIdAndRemove(id, err => {
-    if (err) return res.send(err);
-    return res.json({ success: true });
-  });
-});
-
-router.post("/putData", (req, res) => {
-  let data = new Data();
-
-  const { id, message } = req.body;
-
-  if ((!id && id !== 0) || !message) {
-    return res.json({
-      success: false,
-      error: "INVALID INPUTS"
-    });
+  try {
+    res.send(codes);
+  } catch (err) {
+    res.status(500).send(err);
   }
-  data.message = message;
-  data.id = id;
-  data.save(err => {
-    if (err) return res.json({ success: false, error: err });
-    return res.json({ success: true });
-  });
+});
+
+router.post('/addnum', async (req, res) => {
+  const code = new codesModel(req.body);
+
+  try {
+    await code.save();
+    res.send(code);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+router.post('/validate/:name', async (req, res) => {
+  const checkCode = await codesModel.find({name: req.params.name});
+
+  try {
+    if(checkCode.length > 0 || checkCode.length === 1) {
+      checkCode[0].code === req.body.code ? res.send(true) : res.send(false)
+    } else {
+      res.send("error")
+    }
+  } catch (err) {
+    res.status(500).send(err);
+  }
 });
 
 app.use("/api", router);

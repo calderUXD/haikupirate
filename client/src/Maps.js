@@ -1,44 +1,46 @@
-import React, {createContext} from 'react';
+import React, { Component, createContext} from 'react';
 import styled from 'styled-components';
 import slides from './slides.js';
-
 import Tile from './components/Tile';
+import Winner from "./components/Winner";
 
 const Forms = createContext({})
 
-const defaultState = {
-    a: {
-        pass: "a",
-        func: (pass) => null
-    },
-    b: {
-        pass: "b",
-        func: (pass) => null
-    },
-    c: {
-        pass: "c",
-        func: (pass) => null
-    },
-    d: {
-        pass: "d",
-        func: (pass) => null
-    },
-    e: {
-        pass: "e",
-        func: (pass) => null
-    }
-}
+class Maps extends Component {
+    constructor(props) {
+        super(props);
 
-const Maps = () => {
-    return (
-        <Forms.Provider value={defaultState}>
+        this.state = {
+            a: {
+                code: ""
+            },
+            b: {
+                code: ""
+            },
+            c: {
+                code: ""
+            },
+            d: {
+                code: ""
+            },
+            e: {
+                code: ""
+            },
+
+        }
+
+    }
+    render() {
+        return (
+            <Forms.Provider value={{...this.state, updateState: (group, value) => this.setState({[group]: {code: value}})}}>
             <React.Fragment>
-                {slides.map(slide => <Tile slide={slide} />)}
+                {slides.map((slide, idx) => <Tile slide={slide} key={idx} />)}
+                <Winner context={this.state} />
             </React.Fragment>
         </Forms.Provider>
-        
-    );
-};
+        );
+    }
+}
 
 export default Maps;
 export const FormsConsumer = Forms.Consumer;
