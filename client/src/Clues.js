@@ -6,7 +6,7 @@ import Tile from './components/Tile';
 
 const Maps = ({config}) => {
     return (
-        <Tile />
+        <div>hinsts here</div>
     );
 };
 

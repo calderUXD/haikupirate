@@ -8,9 +8,9 @@ import Clues from './Clues';
 const Body = styled.div`
     width: 100%;
     max-width: 420px;
-    padding-top: 20px;
+    padding-top: 5px;
     height: 100%;
-    background: #969395;
+    background: #fdf8e3;
 `;
 
 export default class App extends Component {
@@ -18,9 +18,9 @@ export default class App extends Component {
         return (
             <Router>
                 <Body>
-                    <Nav />
+                    {/* <Nav /> */}
                     <Route exact path="/" component={Maps} />
-                    <Route exact path="/clues" component={Clues} />
+                    <Route exact path="/hints" component={Clues} />
                 </Body>
             </Router>
             
