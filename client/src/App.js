@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import styled from 'styled-components';
-import Nav from "./components/Navigation";
+//import Nav from "./components/Navigation";
 import Maps from './Maps';
 import Clues from './Clues';
 

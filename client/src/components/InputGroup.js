@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import ReactMomentCountDown from 'react-moment-countdown';
 import moment from 'moment';
 import styled from 'styled-components';
@@ -34,7 +33,7 @@ const Input = styled.input`
     &:focus{
         outline: none;
     }
-    ${props => props.direction === "random" && props.idx % 2 == 0 ? "align-self: flex-end" : ""}
+    ${props => props.direction === "random" && props.idx % 2 === 0 ? "align-self: flex-end" : ""}
 
 
 `;
@@ -121,7 +120,7 @@ class InputGroup extends Component {
     }
 
     componentDidMount() {
-        console.log("mounted");
+        
     }
 
     componentDidUpdate() {
@@ -173,6 +172,8 @@ class InputGroup extends Component {
         const today = moment();
         const targetDate = moment('2019-12-21 20:00:00');
         const dif = today.diff(targetDate, 'days');
+
+        console.log(isSameorAfter);
         
         console.log("numdays", dif)
 

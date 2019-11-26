@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import styled from "styled-components";
-import {FormsConsumer} from "../Maps";
+//import {FormsConsumer} from "../Maps";
 
 const Overlay = styled.div`
     background: black;
@@ -22,11 +22,7 @@ const Text = styled.span`
 `;
 
 class Winner extends Component {
-    constructor(props) {
-        super(props);
-
-    }
-
+    
     componentDidUpdate(prevProps, prevState) {
         console.log("update");
         console.log("ctxmount", this.props.context);

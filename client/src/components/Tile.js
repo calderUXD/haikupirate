@@ -84,7 +84,7 @@ const Tile = ({slide}) => {
 
     return (
         <TileWrap bg={slide.image}>
-            <img src={slide.image} />
+            <img src={slide.image} alt={slide.group} />
             {inputs !== null ? 
                     <InputWrap position={position}>
                     <InputGroup 

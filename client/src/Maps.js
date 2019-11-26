@@ -1,5 +1,5 @@
 import React, { Component, createContext} from 'react';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 import slides from './slides.js';
 import Tile from './components/Tile';
 import Winner from "./components/Winner";
