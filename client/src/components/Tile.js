@@ -25,8 +25,6 @@ const InputWrap = styled.div`
     left: ${({position}) => position[1]};
     & span {
         font-size: 30px;
-        font-family: 'Hind', sans-serif;
-        font-weight: 600 
     }
 `;
 
@@ -69,9 +67,7 @@ const Text = styled.span`
 
 const Slide = styled.div`
     background: transparent;
-    font-family: 'Hind', sans-serif;
     font-size: 16px;
-    font-weight: 500;
     color: #000;
     height: 200px;
     text-align: left;
@@ -121,9 +117,9 @@ const Tile = ({slide}) => {
                                     Go there. Find the code.
                                 </p>
                                 <p>
-                                    Mind each boundry.<br />
+                                    Mind each boundary.<br />
                                     Each Haiga reveals enough.<br />
-                                    Use the <Link to="/hints">hints</Link> for help.
+                                    There are <Link to="/hints" target="_blank" style={{color:"red"}}>hints</Link> for some.
                                 </p>
                             </Slide>
                             <Slide>
@@ -142,7 +138,7 @@ const Tile = ({slide}) => {
                                 <p>
                                     Tamper with a hide?<br />
                                    It becomes revealed to all.<br />
-                                    Codes don't change for move.
+                                    Codes don't change or move.
                                 </p>
                                 <p>
                                     Think outside, not in.<br />

@@ -168,8 +168,13 @@ class InputGroup extends Component {
 
     render() {
         const {inputs, direction, group, offset} = this.props;
-        const solstice = moment('2019-12-21', 'YYYY-MM-DD');
-        const isSameorAfter = moment().isSameOrAfter('2019-12-19');
+        const solstice ='2019-12-21 20:00:00';
+        const isSameorAfter = moment().isSameOrAfter('2019-12-19 20:00:00');
+        const today = moment();
+        const targetDate = moment('2019-12-21 20:00:00');
+        const dif = today.diff(targetDate, 'days');
+        
+        console.log("numdays", dif)
 
         return (
             <FormsConsumer>
@@ -211,7 +216,7 @@ class InputGroup extends Component {
                             </div>
                         }
                     </Inputs>
-                    : <Count toDate={solstice} />
+                    : <Count toDate={solstice} sourceFormatMask='YYYY-MM-DD HH:mm:ss' targetFormatMask='DD:HH:mm:ss' />
                     }
                     
                     {/* <div>poop</div> */}

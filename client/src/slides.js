@@ -22,7 +22,7 @@ const slides = [
             fields: [1,2,3,4,5]
         }
     },{
-        image: "https://res.cloudinary.com/haikupirate/image/upload/v1574660980/haiku/three_ofjwnx.png",
+        image: "https://res.cloudinary.com/haikupirate/image/upload/v1574741336/haiku/tree_huovuy.png",
         inputs: {
             position: ["22px", "33px"],
             group: "c",
