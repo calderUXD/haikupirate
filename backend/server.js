@@ -20,6 +20,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
 
+app.use(express.static('client/build')); 
+app.use('*', express.static('client/build')); // Added this     
+
 router.get("/", (req, res) => {
   res.json({ message: "HELLOW WORLDUUHHHH" });
 });
