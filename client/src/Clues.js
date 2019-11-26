@@ -25,12 +25,7 @@ const Maps = ({config}) => {
 
             <img alt="Four" src="https://res.cloudinary.com/haikupirate/image/upload/v1574742972/haiku/hintpics_wnjesu.png" />
 
-            {/* <img src="https://res.cloudinary.com/haikupirate/image/upload/v1574671348/haiku/hint5_txmvkb.png" />
-
-            <img src="https://res.cloudinary.com/haikupirate/image/upload/v1574671348/haiku/hint6_yshdhy.png" />
-
-            <img src="https://res.cloudinary.com/haikupirate/image/upload/v1574671348/haiku/hint6_1_oyqk8i.png" /> */}
-        </Div>
+         </Div>
     );
 };
 

@@ -119,7 +119,7 @@ const Tile = ({slide}) => {
                                 <p>
                                     Mind each boundary.<br />
                                     Each Haiga reveals enough.<br />
-                                    There are <Link to="/hints" target="_blank" style={{color:"red"}}>hints</Link> for some.
+                                    There are <Link to="/hints" style={{color:"red"}}>hints</Link> for some.
                                 </p>
                             </Slide>
                             <Slide>
