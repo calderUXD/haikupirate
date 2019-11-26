@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { Carousel } from 'react-responsive-carousel';
 import InputGroup from "./InputGroup";
 
@@ -119,7 +119,7 @@ const Tile = ({slide}) => {
                                 <p>
                                     Mind each boundary.<br />
                                     Each Haiga reveals enough.<br />
-                                    There are <Link to="/hints" style={{color:"red"}}>hints</Link> for some.
+                                    There are <a href="/hints" target="_blank" style={{color:"red"}}>hints</a> for some.
                                 </p>
                             </Slide>
                             <Slide>

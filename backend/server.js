@@ -18,11 +18,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(logger("dev"));
-
-app.get('*', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});    
+app.use(logger("dev")); 
 
 router.get("/checknum/:name/:code", (req, res) => {
   codesModel.find({}, (err, code) => {
