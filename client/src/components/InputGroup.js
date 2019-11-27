@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import ReactMomentCountDown from 'react-moment-countdown';
+import ReactGA from 'react-ga';
 import moment from 'moment';
 import styled from 'styled-components';
 import axios from "axios";
@@ -143,8 +144,18 @@ class InputGroup extends Component {
                             this.setState({isValid: true});
                             ctx.updateState(group, this.state.pass);
                             //ctx[group].code = this.state.pass;
-                            console.log(ctx.updateState);
+                            ReactGA.event({
+                                category: 'Code Entry',
+                                group: group,
+                                action: 'Entered Valid Code'
+                            });
                         } else {
+                            ReactGA.event({
+                                category: 'Code Entry',
+                                group: group,
+                                action: 'Entered Invalid Code'
+                            });
+
                             this.setState({
                                 1: "",
                                 2: "",
