@@ -146,13 +146,13 @@ class InputGroup extends Component {
                             //ctx[group].code = this.state.pass;
                             ReactGA.event({
                                 category: 'Code Entry',
-                                group: group,
+                                label: group,
                                 action: 'Entered Valid Code'
                             });
                         } else {
                             ReactGA.event({
                                 category: 'Code Entry',
-                                group: group,
+                                label: group,
                                 action: 'Entered Invalid Code'
                             });
 
