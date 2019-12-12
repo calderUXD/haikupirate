@@ -1,6 +1,6 @@
 const slides = [
     {
-        image: "https://res.cloudinary.com/haikupirate/image/upload/v1576123135/haiku/finalart_Page_1_oytgjz.png",
+        image: "https://res.cloudinary.com/haikupirate/image/upload/v1574665100/haiku/maps_qm0rkn.png",
     },
     {
         image: "https://res.cloudinary.com/haikupirate/image/upload/v1576120703/haiku/finalart_Page_5_nkdz83.png",

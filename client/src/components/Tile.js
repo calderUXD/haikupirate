@@ -96,7 +96,7 @@ const Tile = ({slide}) => {
                 </InputWrap>
                 :
                 <React.Fragment>
-                    <Text>This is a real treasure map</Text>
+                    <Text>This is a real treasure map.</Text>
                     <Inst>
                         <Carousel showThumbs={false} showStatus={false}>
                             <Slide>
