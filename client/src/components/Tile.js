@@ -104,7 +104,7 @@ const Tile = ({slide}) => {
                                     the codes to unlock this map.<br />
                                     5 codes, 5 places.</p>
                                 <p>
-                                    $3,000<br />
+                                    $3,000 less 1<br />
                                     awaits the first to unlock;<br />
                                     sent via Venmo.
 
@@ -119,7 +119,7 @@ const Tile = ({slide}) => {
                                 <p>
                                     Mind each boundary.<br />
                                     Each Haiga reveals enough.<br />
-                                    There are <a href="/hints" target="_blank" style={{color:"red"}}>hints</a> for some.
+                                    There are <a href="/hints" target="_blank" style={{color:"red", textDecoration: "underline"}}>hints</a> for some.
                                 </p>
                             </Slide>
                             <Slide>

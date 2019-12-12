@@ -3,7 +3,7 @@ const slides = [
         image: "https://res.cloudinary.com/haikupirate/image/upload/v1574665100/haiku/maps_qm0rkn.png",
     },
     {
-        image: "https://res.cloudinary.com/haikupirate/image/upload/v1574657183/haiku/one_pcooux.png",
+        image: "https://res.cloudinary.com/haikupirate/image/upload/v1576120703/haiku/finalart_Page_5_nkdz83.png",
         inputs: {
             position: ["42px", "20px"],
             group: "a",
@@ -13,7 +13,7 @@ const slides = [
         }
     },
     {
-        image: "https://res.cloudinary.com/haikupirate/image/upload/v1574658766/haiku/two_u1jdgg.png",
+        image: "https://res.cloudinary.com/haikupirate/image/upload/v1576120703/haiku/finalart_Page_6_qy3bgz.png",
         inputs: {
             position: ["22px", "33px"],
             group: "b",
@@ -22,7 +22,7 @@ const slides = [
             fields: [1,2,3,4,5]
         }
     },{
-        image: "https://res.cloudinary.com/haikupirate/image/upload/v1574741336/haiku/tree_huovuy.png",
+        image: "https://res.cloudinary.com/haikupirate/image/upload/v1576120703/haiku/finalart_Page_7_l6xsce.png",
         inputs: {
             position: ["22px", "33px"],
             group: "c",
@@ -31,7 +31,7 @@ const slides = [
             fields: [1,2,3,4,5]
         }
     },{
-        image: "https://res.cloudinary.com/haikupirate/image/upload/v1574660650/haiku/four_pgtkog.png",
+        image: "https://res.cloudinary.com/haikupirate/image/upload/v1576120703/haiku/finalart_Page_9_z8yphh.png",
         inputs: {
             position: ["42px", "20px"],
             group: "d",
