@@ -31,7 +31,7 @@ const slides = [
             fields: [1,2,3,4,5]
         }
     },{
-        image: "https://res.cloudinary.com/haikupirate/image/upload/v1576120703/haiku/finalart_Page_9_z8yphh.png",
+        image: "https://res.cloudinary.com/haikupirate/image/upload/v1576120703/haiku/finalart_Page_8_gqnt2h.png",
         inputs: {
             position: ["42px", "20px"],
             group: "d",
@@ -40,7 +40,7 @@ const slides = [
             fields: [1,2,3,4,5]
         }
     },{
-        image: "https://res.cloudinary.com/haikupirate/image/upload/v1574660649/haiku/five_qlp603.png",
+        image: "https://res.cloudinary.com/haikupirate/image/upload/v1576120703/haiku/finalart_Page_9_z8yphh.png",
         inputs: {
             position: ["42px", "33px"],
             group: "e",
