@@ -104,7 +104,7 @@ const Tile = ({slide}) => {
                                     the codes to unlock this map.<br />
                                     5 codes, 5 places.</p>
                                 <p>
-                                    3,000 less 1<br />
+                                    $3,000 less 1<br />
                                     awaits the first to unlock;<br />
                                     sent via Venmo.
 
