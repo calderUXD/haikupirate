@@ -193,7 +193,7 @@ class InputGroup extends Component {
                 {(ctx) =>
                 <React.Fragment>
                     {
-                        group !== "e" ? 
+                        group !== "f" ? 
                         <Inputs direction={direction}>
                         {inputs.map((input, index) => {
                             const id = [index + 1].toString();
@@ -228,10 +228,42 @@ class InputGroup extends Component {
                             </div>
                         }
                     </Inputs>
-                    : <Count toDate={solstice} sourceFormatMask='YYYY-MM-DD HH:mm:ss' targetFormatMask='DD:HH:mm:ss' />
+                    :
+                        <React.Fragment>
+                           {isSameorAfter ?
+                           <Inputs direction={direction}>
+                           {inputs.map((input, index) => {
+                               const id = [index + 1].toString();
+                               return(
+                                   <Input 
+                                       key={index}
+                                       direction={direction}
+                                       idx={index + 1}
+                                       id={group + id} 
+                                       type="text"
+                                       tabIndex={offset + (index + 1)}
+                                       value={this.state[id]}
+                                       onFocus={(e) => this.handelFocus(e, group)}
+                                       onChange={(e) => this.handelChange(e, id, group, ctx)}
+                                       ref={input => this[group + id] = input}
+   
+                                   />
+                                   
+                               )}
+                           )}
+                           {this.state.isValid !== null && 
+                               <div>
+                                   {this.state.isValid === false ? 
+                                       <svg x="0px" y="0px" viewBox="0 0 95 118.75" enableBackground="new 0 0 95 95" style={{height:"50px", fill: "red"}}><path d="M73.3,19L73.3,19c3.2,3.2,3.2,8.4,0,11.5L30.9,73c-3.2,3.2-8.4,3.2-11.5,0l0,0c-3.2-3.2-3.2-8.4,0-11.5L61.8,19  C65,15.8,70.1,15.8,73.3,19z"/><path d="M73.3,73L73.3,73c-3.2,3.2-8.4,3.2-11.5,0L19.3,30.6c-3.2-3.2-3.2-8.4,0-11.5l0,0c3.2-3.2,8.4-3.2,11.5,0l42.4,42.4  C76.5,64.6,76.5,69.8,73.3,73z"/></svg> 
+                                   : 
+                                       <svg dataIcon="circle-check" viewBox="0 0 16 20" x="0px" y="0px" style={{height:"40px", fill: "green"}}><path d="M8 0c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm3 4.594l1.406 1.406-5.406 5.406-3.406-3.406 1.406-1.406 2 2 4-4z"/></svg>
+                                   }
+                               </div>
+                           }
+                       </Inputs> : <Count toDate={solstice} sourceFormatMask='YYYY-MM-DD HH:mm:ss' targetFormatMask='DD:HH:mm:ss' />
+                         }
+                        </React.Fragment>
                     }
-                    
-                    {/* <div>poop</div> */}
                     </React.Fragment>
                 }
             </FormsConsumer>
