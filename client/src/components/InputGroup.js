@@ -182,7 +182,7 @@ class InputGroup extends Component {
         const isSameorAfter = moment().isSameOrAfter('2019-12-19 20:00:00');
         const today = moment();
         const targetDate = moment('2019-12-21 20:00:00');
-        const dif = today.diff(targetDate, 'days');
+        const dif = today.diff(targetDate, 'minutes');
 
         console.log(isSameorAfter);
         
@@ -193,7 +193,7 @@ class InputGroup extends Component {
                 {(ctx) =>
                 <React.Fragment>
                     {
-                        group !== "f" ? 
+                        group !== "e" ? 
                         <Inputs direction={direction}>
                         {inputs.map((input, index) => {
                             const id = [index + 1].toString();
@@ -230,7 +230,7 @@ class InputGroup extends Component {
                     </Inputs>
                     :
                         <React.Fragment>
-                           {isSameorAfter ?
+                           {dif >= 0 ?
                            <Inputs direction={direction}>
                            {inputs.map((input, index) => {
                                const id = [index + 1].toString();
