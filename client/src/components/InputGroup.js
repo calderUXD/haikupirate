@@ -53,6 +53,22 @@ const HR = styled.div`
     height: 34px;
 
 `;
+const HRE = styled.div`
+    display:inline-flex;
+    margin-left: 0px;
+    width: 10px;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    font-size: 9px;
+    vertical-align: top;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+    position: absolute;
+    left: 36px;
+
+`;
 
 const HB = styled.div`
     display:inline-flex;
@@ -66,6 +82,23 @@ const HB = styled.div`
     justify-content: center;
     align-items: center;
     height: 10px;
+    
+`;
+
+const HBE = styled.div`
+    display:inline-flex;
+    margin-top: 7px;
+    width: 30px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    font-size: 9px;
+    vertical-align: top;
+    justify-content: center;
+    align-items: center;
+    height: 10px;
+    position: absolute;
+    top: 32px;
 
 `;
 
@@ -218,6 +251,7 @@ class InputGroup extends Component {
                         {group === "b" && <React.Fragment><HBV>9"</HBV><HRV>36"</HRV></React.Fragment>}
                         {group === "c" && <React.Fragment><HBV>4"</HBV><HRV>22"</HRV></React.Fragment>}
                         {group === "d" && <React.Fragment><HR>1"</HR><HB>3"</HB></React.Fragment>}
+                        
                         {this.state.isValid !== null && 
                             <div>
                                 {this.state.isValid === false ? 
@@ -251,6 +285,7 @@ class InputGroup extends Component {
                                    
                                )}
                            )}
+                           {group === "e" && <React.Fragment><HRE>1"</HRE><HBE>1"</HBE></React.Fragment>}
                            {this.state.isValid !== null && 
                                <div>
                                    {this.state.isValid === false ? 
