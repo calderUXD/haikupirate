@@ -35,7 +35,7 @@ class Winner extends Component {
         return (
                     <React.Fragment>
                         {value.length === 25 && <Overlay>
-                            <Text>Congrats you did it!</Text>
+                            <Text>Congrats you did it! Please send email to <a href="mailto:haikupirate@protonmail.com">haikupirate@protonmail.com</a></Text>
                         </Overlay>}
                     </React.Fragment>
         );
