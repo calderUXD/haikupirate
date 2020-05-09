@@ -124,9 +124,10 @@ const Tile = ({slide}) => {
                             </Slide>
                             <Slide>
                                 <p>
-                                    Many will find four.<br />
-                                    Wait. Solstice reveals the fifth.<br />
-                                    First to find all wins.
+                                Many will find 4.<br />
+                                Some are easy. Most are hard.<br />
+                                First to find all wins.<br />
+
                                 </p>
                                 <p>
                                     No rules. No signups.<br />
