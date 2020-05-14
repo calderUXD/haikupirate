@@ -28,6 +28,7 @@ const Maps = ({config}) => {
 
             <img alt="Five" src="https://res.cloudinary.com/haikupirate/image/upload/v1574671348/haiku/hint3_xzuh5v.png" />
             <img alt="Six" src="https://res.cloudinary.com/haikupirate/image/upload/v1576119546/haiku/hint_pics_Page_6_pugn58.png" />
+            <img alt="Seven" src="https://res.cloudinary.com/haikupirate/image/upload/v1589434061/haiku/hint7_wg7ogp.png" />            
 
             
 
