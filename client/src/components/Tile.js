@@ -96,14 +96,14 @@ const Tile = ({slide}) => {
                 </InputWrap>
                 :
                 <React.Fragment>
-                    <Text>This is a real treasure map.</Text>
+                    <Text>This is a real treasure map that was solved on June 30th @ 22:04.</Text>
                     <Inst>
                         <Carousel showThumbs={false} showStatus={false}>
                             <Slide>
                                 <p>Hidden in plain sight,<br />
                                     the codes to unlock this map.<br />
                                     5 codes, 5 places.</p>
-                                <p>
+                                <p style={{textDecoration: 'line-through'}}>
                                     $3,000 less 1<br />
                                     awaits the first to unlock;<br />
                                     sent via Venmo.
@@ -145,6 +145,13 @@ const Tile = ({slide}) => {
                                     Think outside, not in.<br />
                                     Think Goonies...Banksy...but safe!<br />
                                     Go! Search for my mark! <br />
+                                </p>
+                            </Slide>
+                            <Slide>
+                                <p>
+                                    the Venmo is gone<br />
+                                    yet the codes remain alive<br />
+                                    those who find will know<br />
                                 </p>
                             </Slide>
                         </Carousel>
