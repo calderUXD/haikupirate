@@ -13,7 +13,7 @@ const TileWrap = styled.div`
     position: relative;
     & img {
         max-width: 100%;
-        width:100%;
+        max-height: 320px;
         margin-bottom: 1rem;
     }
 `;
@@ -21,27 +21,29 @@ const TileWrap = styled.div`
 const TextWrap = styled.div `
     text-align: left;
     width: 100%;
-    padding: 0 1rem 2rem 1rem;
+    padding: 0 1rem 1rem 1rem;
 `;
 
 const H2 = styled.h2`
     margin-bottom: 0;
+    font-size: 18px;
 `;
 
 const H4 = styled.h4`
     margin-bottom: 0;
+    font-size: 14px;
 `;
 
 const Bgroup = styled.div`
     position:relative;
     display: flex;
-    padding: 1.5rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
 `;
 
 const Box = styled.div`
-    width: 50px;
-    height: 50px;
-    margin-right: 2rem;
+    width: 30px;
+    height: 30px;
+    margin-right: 1.5rem;
     transform: rotate(45deg);
     border: 1px solid #000;
     background-color: #fff;
@@ -69,7 +71,7 @@ const Input = styled.input`
     border: none;
     height:30px;
     width: 30px;
-    top: 34px;
+    top: 0px;
     left: ${({i}) => i};
     position: absolute;
     z-index: 9;
@@ -93,7 +95,7 @@ const Tile = ({intro}) => {
             </TextWrap>
             <Bgroup>
                 {boxes.map(bg => <Box bg={bg} />)}
-                {boxes.map((bg, i) => <Input key={i} id={bg} i={`${34 +(i * 82)}px`} />)}
+                {boxes.map((bg, i) => <Input key={i} id={bg} i={`${25 +(i * 54)}px`} />)}
             </Bgroup>
             <a href="" target="_blank"><img src="https://res.cloudinary.com/haikupirate/image/upload/v1601876654/chaptertwo/fold_no0udp.png" /></a>
             <p style={{fontSize: "10px"}}>Tableau No. IV, Lozenge Composition with Red, Gray, Blue, Yellow, and Black
