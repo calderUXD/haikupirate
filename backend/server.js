@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const codesModel = require("./data");
+const codesModel2 = require("./codes2");
+const gameInfoModel = require("./gameInfo");
 
 const API_PORT = 3001;
 const app = express();
@@ -27,22 +29,11 @@ router.get("/checknum/:name/:code", (req, res) => {
   });
 });
 
-router.get('/codes', async (req, res) => {
-  const codes = await codesModel.find({});
+router.get('/info', async (req, res) => {
+  const info = await gameInfoModel.find({});
 
   try {
-    res.send(codes);
-  } catch (err) {
-    res.status(500).send(err);
-  }
-});
-
-router.post('/addnum', async (req, res) => {
-  const code = new codesModel(req.body);
-
-  try {
-    await code.save();
-    res.send(code);
+    res.send(info[0]);
   } catch (err) {
     res.status(500).send(err);
   }

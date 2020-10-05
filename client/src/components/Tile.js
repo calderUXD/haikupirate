@@ -96,7 +96,7 @@ const Tile = ({slide}) => {
                 </InputWrap>
                 :
                 <React.Fragment>
-                    <Text style={{fontSize: '16px', paddingRight: '2rem'}}>This is a real treasure map that was solved on June 30th  2020 @ 22:04.</Text>
+                    <Text style={{fontSize: '18px', paddingRight: '2rem'}}>This is a real treasure map that was solved on June 30th  2020 @ 22:04.</Text>
                     <Inst>
                         <Carousel showThumbs={false} showStatus={false}>
                             <Slide>
