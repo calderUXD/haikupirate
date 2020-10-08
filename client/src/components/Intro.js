@@ -96,7 +96,7 @@ const Print = styled.a`
 const Tile = ({intro}) => {
     return (
         <TileWrap>
-            <img src="https://res.cloudinary.com/haikupirate/image/upload/v1602135467/chaptertwo/ch2_krfd7x.png" />
+            <img src="https://res.cloudinary.com/haikupirate/image/upload/v1602140247/chaptertwo/ch2-hi_hjzazq.png" />
             {boxes.map((bg, i) => <Input key={i} id={bg} i={`${33 +(i * 47)}px`} />)}
             <Print href="https://gofile.io/d/f13Uyb" target="_blank"><img src={print} /></Print>
         </TileWrap>
