@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 //import { Link } from "react-router-dom";
+import print from "../print2.png";
 
 
 
@@ -14,7 +15,7 @@ const TileWrap = styled.div`
     text-align:center;
     background: transparent;
     position: relative;
-    & img {
+    > img {
         max-width: 414px;
         min-width: 414px;
     }
@@ -80,12 +81,24 @@ const Input = styled.input`
     background-color: transparent;
 `;
 
+const Print = styled.a`
+    position: absolute;
+    top: 307px;
+    right: 20px;
+    padding: 1rem;
+    >img{
+        height:22px;
+        width: 22px;
+    }
+`;
+
 
 const Tile = ({intro}) => {
     return (
         <TileWrap>
             <img src="https://res.cloudinary.com/haikupirate/image/upload/v1602135467/chaptertwo/ch2_krfd7x.png" />
             {boxes.map((bg, i) => <Input key={i} id={bg} i={`${33 +(i * 47)}px`} />)}
+            <Print href="https://gofile.io/d/f13Uyb" target="_blank"><img src={print} /></Print>
         </TileWrap>
     );
 };
