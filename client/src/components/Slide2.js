@@ -6,12 +6,12 @@ import print from "../print2.png";
 
 
 const TileWrap = styled.div`
-    border-bottom: 2px solid #969395;
+    border-bottom: 2px dotted #ccc;
     position: relative;
     width: 414px;
     min-width: 414px;
-    height: 896px;
-    min-height: 896px;
+    height: 897px;
+    min-height: 897px;
     text-align:center;
     background: transparent;
     position: relative;
