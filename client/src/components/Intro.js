@@ -6,22 +6,18 @@ import styled from 'styled-components';
 
 const TileWrap = styled.div`
     border-bottom: 2px solid #969395;
-    width: 100%;
-    max-width: 1440px;
+    position: relative;
+    width: 414px;
+    min-width: 414px;
+    height: 896px;
+    min-height: 896px;
     text-align:center;
     background: transparent;
     position: relative;
     & img {
-        max-width: 100%;
-        max-height: 320px;
-        margin-bottom: 1rem;
+        max-width: 414px;
+        min-width: 414px;
     }
-`;
-
-const TextWrap = styled.div `
-    text-align: left;
-    width: 100%;
-    padding: 0 1rem 1rem 1rem;
 `;
 
 const H2 = styled.h2`
@@ -35,9 +31,12 @@ const H4 = styled.h4`
 `;
 
 const Bgroup = styled.div`
-    position:relative;
+    position:abolute;
     display: flex;
     padding: 0 1.5rem 1.5rem 1.5rem;
+    border: 1px solid red;
+    top: 10px;
+    left: 0px;
 `;
 
 const Box = styled.div`
@@ -71,7 +70,7 @@ const Input = styled.input`
     border: none;
     height:30px;
     width: 30px;
-    top: 0px;
+    top: 294px;
     left: ${({i}) => i};
     position: absolute;
     z-index: 9;
@@ -83,23 +82,10 @@ const Input = styled.input`
 
 
 const Tile = ({intro}) => {
-    console.log("intro", intro)
     return (
         <TileWrap>
-            {intro.map((text, idx) => 
-                 <TextWrap key={idx}> {renderText(idx, text.text)} </TextWrap>
-            )}
-            <TextWrap>
-                <H4>Input:</H4>
-
-            </TextWrap>
-            <Bgroup>
-                {boxes.map(bg => <Box bg={bg} />)}
-                {boxes.map((bg, i) => <Input key={i} id={bg} i={`${25 +(i * 54)}px`} />)}
-            </Bgroup>
-            <a href="" target="_blank"><img src="https://res.cloudinary.com/haikupirate/image/upload/v1601876654/chaptertwo/fold_no0udp.png" /></a>
-            <p style={{fontSize: "10px"}}>Tableau No. IV, Lozenge Composition with Red, Gray, Blue, Yellow, and Black
-<br />Piet Mondrian c. 1924/1925</p>
+            <img src="https://res.cloudinary.com/haikupirate/image/upload/v1602135467/chaptertwo/ch2_krfd7x.png" />
+            {boxes.map((bg, i) => <Input key={i} id={bg} i={`${33 +(i * 47)}px`} />)}
         </TileWrap>
     );
 };

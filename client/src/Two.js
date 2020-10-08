@@ -14,18 +14,6 @@ class Maps extends Component {
             a: {
                 code: ""
             },
-            b: {
-                code: ""
-            },
-            c: {
-                code: ""
-            },
-            d: {
-                code: ""
-            },
-            e: {
-                code: ""
-            },
             info: null
 
         }
