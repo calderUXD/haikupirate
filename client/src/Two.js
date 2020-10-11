@@ -27,7 +27,7 @@ class Maps extends Component {
     }
     handelChange(e, id, group, ref) {
         this.setState({[id]: e.target.value});
-        this.setState({pass: this.state.pass.concat(e.target.value)}, function () {
+        this.setState({pass: this.state.pass.concat(e.target.value.toLowerCase())}, function () {
             if(this.state.pass.length === 4){
                 axios.post(`/api/validate2/${group}`, {code: this.state.pass})
                     .then(res => {
