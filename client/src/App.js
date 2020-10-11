@@ -11,7 +11,7 @@ import Clues from './Clues';
 ReactGA.initialize('UA-153423409-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
-const Body = styled.div`
+const COne = styled.div`
     width: 100%;
     max-width: 420px;
     padding-top: 5px;
@@ -19,17 +19,29 @@ const Body = styled.div`
     background: #fdf8e3;
 `;
 
+const CTwo = styled.div`
+    width: 100%;
+    max-width: 414px;
+    padding-top: 5px;
+    height: 100%;
+    background: #F8F5ED;
+`;
+
+
 export default class App extends Component {
     render() {
         return (
             <Router>
-                <Body>
+                <COne>
                     {/* <Nav /> */}
-                    <Route exact path="/" component={Maps} />
+                    <Route exact path="/chapterone" component={Maps} />
                     <Route exact path="/hints" component={Clues} />
-                    <Route exact path="/chaptertwo" component={Two} />
+                    
+                </COne>
+                <CTwo>
+                    <Route exact path="/" component={Two} />
                     <Route exact path="/mondrian" component={Maps2} />
-                </Body>
+                </CTwo>
             </Router>
             
         )

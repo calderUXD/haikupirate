@@ -53,6 +53,20 @@ router.post('/validate/:name', async (req, res) => {
   }
 });
 
+router.post('/validate2/:name', async (req, res) => {
+  const checkCode = await codesModel2.find({name: req.params.name});
+
+  try {
+    if(checkCode.length > 0 || checkCode.length === 1) {
+      checkCode[0].code === req.body.code ? res.send(true) : res.send(false)
+    } else {
+      res.send("error")
+    }
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
 app.use("/api", router);
 
 app.listen(API_PORT, () => console.log(`LISTENING ON UHH PORT ${API_PORT}`));

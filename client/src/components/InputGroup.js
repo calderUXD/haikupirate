@@ -217,10 +217,6 @@ class InputGroup extends Component {
         const targetDate = moment('2019-12-21 20:00:00');
         const dif = today.diff(targetDate, 'minutes');
 
-        console.log(isSameorAfter);
-        
-        console.log("numdays", dif)
-
         return (
             <FormsConsumer>
                 {(ctx) =>

@@ -6,7 +6,7 @@ import print from "../print2.png";
 
 
 const TileWrap = styled.div`
-    border-bottom: 2px dotted #ccc;
+    border-bottom: 2px solid #fff;
     position: relative;
     width: 414px;
     min-width: 414px;
@@ -51,9 +51,7 @@ const Box = styled.div`
 `;
 
 const renderText = (idx, text) => {
-    console.log("text", text)
     if(idx === 0) {
-        console.log("idx", idx)
        return text.map(block => <H2 key={block}>{block}</H2>)
     } else {
         return text.map(block => <H4 key={block}>{block}</H4>)
