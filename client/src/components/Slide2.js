@@ -62,28 +62,29 @@ const Print = styled.a`
 
 
 
-const Puzzle = ({img, link, group, form, state, handelChange}) => {
+const Puzzle = ({img, link, group, form, state, handelChange, offset}) => {
     
     return(<React.Fragment>
     <img src={img} />
     {form && boxes.map((box, i) => {
         const id = [i + 1].toString();
         return (<DaInput 
-        name={box}
+        name={group + box}
         key={i} 
+        idx={i + 1}
         id={group + id} 
         i={typeof form === "boolean" ? `${117 + (i * 31.5)}px` : null}
         t={typeof form !== "boolean" && form[i].t}
         l={typeof form !== "boolean" && form[i].l}
         value={state[id]}
-        tabIndex={i + 1}
+        tabIndex={offset + (i + 1)}
         onChange={(e) => handelChange(e, id, group, box)}
         />)})}
     {link && <Print href={link} target="_blank" />}
 </React.Fragment>)};
 
 
-const Tile = ({img, timer, date, link, group, form}) => {
+const Tile = ({img, timer, date, link, group, form, offset}) => {
     const [complete, setComplete] = useState(false);
     const [password, setInput] = useState({
         1: "",
@@ -143,11 +144,11 @@ const Tile = ({img, timer, date, link, group, form}) => {
 
         if(id === "5") {
             document.querySelector(
-                `input[name=${box}]`
+                `input[name=${group + box}]`
               ).blur();
         } else {
             document.querySelector(
-                `input[name=${box}]`
+                `input[name=${group + box}]`
               ).nextSibling.focus();
         }
     }
@@ -168,7 +169,8 @@ const Tile = ({img, timer, date, link, group, form}) => {
                 group={group}
                 form={form}
                 state={password}
-                handelChange={handelChange} />
+                handelChange={handelChange}
+                offset={offset} />
             )}
             
         </TileWrap>

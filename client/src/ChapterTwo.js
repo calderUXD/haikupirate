@@ -16,7 +16,8 @@ const Slides = [
         timer: false,
         link: "https://gofile.io/d/I9Azas",
         group: "a",
-        form: true
+        form: true,
+        offset: 0
     },
     {
         img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/three_qi2dss.png",
@@ -30,7 +31,8 @@ const Slides = [
             {l: "204", t:"116"},
             {l: "255", t:"116.5"},
             {l: "296", t:"145"}
-        ]
+        ],
+        offset: 5
     },
     {
         img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/four_pmbzzh.png",
@@ -70,6 +72,7 @@ const ChapterTwo = () => {
                 group={slide.group}
                 form={slide.form}
                 key={i}
+                offset={slide.offset}
             /> )}
         </React.Fragment>
         
