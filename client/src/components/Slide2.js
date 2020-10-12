@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
-//import { Link } from "react-router-dom";
-import print from "../print2.png";
 import Countdown from 'react-countdown';
+import axios from "axios";
+import ReactGA from 'react-ga';
 
-
-
-
-const boxes = new Array(5);
+const boxes = [
+    "yellow",
+    "grey",
+    "blue",
+    "red",
+    "white"
+]
 
 const TileWrap = styled.div`
     border-bottom: 2px solid #fff;
@@ -26,12 +29,12 @@ const TileWrap = styled.div`
     }
 `;
 
-const Input = styled.input`
+const DaInput = styled.input`
     border: none;
-    height:30px;
-    width: 30px;
-    top: 294px;
-    left: ${({i}) => i};
+    height:21px;
+    width: 21px;
+    top: ${({i, t}) => i === null ? `${t}px` : i};
+    left:${({i, l}) => i === null ? `${l}px` : "198px"};
     position: absolute;
     z-index: 9;
     outline: none;
@@ -57,15 +60,97 @@ const Print = styled.a`
     z-index: 9;
 `;
 
-const Puzzle = ({img, link, group, form}) => <React.Fragment>
+
+
+const Puzzle = ({img, link, group, form, state, handelChange}) => {
+    
+    return(<React.Fragment>
     <img src={img} />
-    {form && boxes.map((bg, i) => <Input key={i} id={bg} i={`${33 +(i * 47)}px`} />)}
+    {form && boxes.map((box, i) => {
+        const id = [i + 1].toString();
+        return (<DaInput 
+        name={box}
+        key={i} 
+        id={group + id} 
+        i={typeof form === "boolean" ? `${117 + (i * 31.5)}px` : null}
+        t={typeof form !== "boolean" && form[i].t}
+        l={typeof form !== "boolean" && form[i].l}
+        value={state[id]}
+        tabIndex={i + 1}
+        onChange={(e) => handelChange(e, id, group, box)}
+        />)})}
     {link && <Print href={link} target="_blank" />}
-</React.Fragment>;
+</React.Fragment>)};
 
 
 const Tile = ({img, timer, date, link, group, form}) => {
     const [complete, setComplete] = useState(false);
+    const [password, setInput] = useState({
+        1: "",
+        2: "",
+        3: "",
+        4: "",
+        6: "",
+        pass: "",
+        isValid: false
+    })
+
+    useEffect(() => {
+        if(password.pass.length === 5 && password.isValid === false){
+            console.log("sending");
+            axios.post(`/api/validate2/${group}`, {code: password.pass})
+                .then(res => {
+                    if(res.data === true){
+                        setInput({...password, isValid: true});
+                        console.log("pass");
+                        
+                        ReactGA.event({
+                            category: 'Code Entry Success',
+                            label: `chapter Two ${group}`,
+                            action: `Entered Valid Code ${group}`
+                        });
+                    } else {
+                        ReactGA.event({
+                            category: 'Code Entry Invalid',
+                            label: `chapter Two ${group}`,
+                            action: `Entered Invalid Code ${group}`
+                        });
+
+                        console.log("fail")
+
+                        setInput({
+                            1: "",
+                            2: "",
+                            3: "",
+                            4: "",
+                            5: "",
+                            pass: "",
+                            isValid: false
+                        })
+                    }
+                })
+        }
+      });
+
+    const handelChange = (e, id, group, box) => {
+        //setInput({...password, );
+        console.log("handelChange", e.target.value);
+        setInput({
+            ...password,
+            [id]: e.target.value,
+            pass: password.pass.concat(e.target.value)
+        });
+
+        if(id === "5") {
+            document.querySelector(
+                `input[name=${box}]`
+              ).blur();
+        } else {
+            document.querySelector(
+                `input[name=${box}]`
+              ).nextSibling.focus();
+        }
+    }
 
     return (
         <TileWrap>
@@ -81,7 +166,9 @@ const Tile = ({img, timer, date, link, group, form}) => {
                 <Puzzle img={img} 
                 link={link}
                 group={group}
-                form={form} />
+                form={form}
+                state={password}
+                handelChange={handelChange} />
             )}
             
         </TileWrap>

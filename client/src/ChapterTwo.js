@@ -24,7 +24,13 @@ const Slides = [
         timer: false,
         link: "https://gofile.io/d/W8akZs",
         group: "b",
-        form: true
+        form: [
+            {l: "98", t:"106"},
+            {l: "141", t:"85"},
+            {l: "204", t:"116"},
+            {l: "255", t:"116.5"},
+            {l: "296", t:"145"}
+        ]
     },
     {
         img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/four_pmbzzh.png",
@@ -56,13 +62,14 @@ const Slides = [
 const ChapterTwo = () => {
     return (
         <React.Fragment>
-            {Slides.map(slide => <Tile
+            {Slides.map((slide, i) => <Tile
                 img={slide.img}
                 date={slide.date}
                 timer={slide.timer}
                 link={slide.link}
                 group={slide.group}
                 form={slide.form}
+                key={i}
             /> )}
         </React.Fragment>
         
