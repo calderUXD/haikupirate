@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
 //import Nav from "./components/Navigation";
 import Maps from './Maps';
-import Maps2 from './Maps2';
+import Maps2 from './ChapterTwo';
 import Two from './Two';
 import Clues from './Clues';
 
@@ -33,14 +33,17 @@ export default class App extends Component {
         return (
             <Router>
                 <COne>
-                    {/* <Nav /> */}
-                    <Route exact path="/chapterone" component={Maps} />
-                    <Route exact path="/hints" component={Clues} />
-                    
+                    <Switch>
+                        <Redirect exact from='/chaptertwo' to='/' />
+                        <Route exact path="/chapterone" component={Maps} />
+                        <Route exact path="/hints" component={Clues} />
+                    </Switch>
                 </COne>
                 <CTwo>
-                    <Route exact path="/" component={Two} />
-                    <Route exact path="/mondrian" component={Maps2} />
+                    <Switch>
+                        <Route exact path="/" component={Two} />
+                        <Route exact path="/mondrian" component={Maps2} />
+                    </Switch>
                 </CTwo>
             </Router>
             

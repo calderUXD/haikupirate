@@ -4,10 +4,7 @@ import styled from 'styled-components';
 import print from "../print2.png";
 import Countdown from 'react-countdown';
 
-const Puzzle = ({img}) => <React.Fragment>
-    <img src={img} />
-    {boxes.map((bg, i) => <Input key={i} id={bg} i={`${33 +(i * 47)}px`} />)}
-</React.Fragment>;
+
 
 
 const boxes = new Array(5);
@@ -43,17 +40,6 @@ const Input = styled.input`
     background-color: transparent;
 `;
 
-const Print = styled.a`
-    position: absolute;
-    top: 307px;
-    right: 20px;
-    padding: 1rem;
-    >img{
-        height:22px;
-        width: 22px;
-    }
-`;
-
 const Count = styled.div`
     position: absolute;
     left:0px;
@@ -63,10 +49,22 @@ const Count = styled.div`
     text-align: center;
     
 `;
+const Print = styled.a`
+    position: absolute;
+    padding: 1rem;
+    top: 816px;
+    right: 24px;
+    z-index: 9;
+`;
+
+const Puzzle = ({img, link, group, form}) => <React.Fragment>
+    <img src={img} />
+    {form && boxes.map((bg, i) => <Input key={i} id={bg} i={`${33 +(i * 47)}px`} />)}
+    {link && <Print href={link} target="_blank" />}
+</React.Fragment>;
 
 
-const Tile = ({img, timer, date}) => {
-    console.log("oiipo", date)
+const Tile = ({img, timer, date, link, group, form}) => {
     const [complete, setComplete] = useState(false);
 
     return (
@@ -77,10 +75,13 @@ const Tile = ({img, timer, date}) => {
                         date={date}
                         onComplete={() => setComplete(true)}
                     /></Count>}
-                    <Puzzle img={img} />
+                    <Puzzle img={img}/>
                 </React.Fragment>
             ):(
-                <Puzzle img={img} />
+                <Puzzle img={img} 
+                link={link}
+                group={group}
+                form={form} />
             )}
             
         </TileWrap>
