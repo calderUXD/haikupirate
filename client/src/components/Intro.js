@@ -55,23 +55,33 @@ const Print = styled.a`
 
 const Tile = ({state, handelChange}) => {
     return (
-        <TileWrap>
-            <img src="https://res.cloudinary.com/haikupirate/image/upload/v1602140247/chaptertwo/ch2-hi_hjzazq.png" alt="bg" />
-            {boxes.map((bg, i) => {
-                const id = [i + 1].toString();
-                return <Input 
-                            maxlength="1"
-                             key={i} 
-                             id={`intro${id}`}
-                             name={bg}
-                             i={`${33 +(i * 47)}px`} 
-                             value={state[id]}
-                             tabIndex={i + 1}
-                             onChange={(e) => handelChange(e, id, "intro", bg)}
-                             ref={input => this[`intro${id}`] = input} />
-            })}
-            <Print href="https://gofile.io/d/f13Uyb" target="_blank"><img src={print} /></Print>
-        </TileWrap>
+        <React.Fragment>
+            <TileWrap>
+                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1602140247/chaptertwo/ch2-hi_hjzazq.png" alt="bg" />
+                {boxes.map((bg, i) => {
+                    const id = [i + 1].toString();
+                    return <Input 
+                                maxlength="1"
+                                key={i} 
+                                id={`intro${id}`}
+                                name={bg}
+                                i={`${33 +(i * 47)}px`} 
+                                value={state[id]}
+                                tabIndex={i + 1}
+                                onChange={(e) => handelChange(e, id, "intro", bg)}
+                                ref={input => this[`intro${id}`] = input} />
+                })}
+                <Print href="https://gofile.io/d/f13Uyb" target="_blank"><img src={print} /></Print>
+            </TileWrap>
+            <TileWrap>
+                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1603073220/chaptertwo/intro2_Page_2_czqjcs.png" alt="bg" />
+                <a href="https://twitter.com/haiku_pirate" target="_blank" style={{display:"block", textAlign:"center", position: 'absolute', bottom: "10px", left: "0px", right: "0px", padding: "10px 0", height: "50px"}}>
+                   
+                </a>  
+            </TileWrap>
+        </React.Fragment>
+
+
     );
 };
 
