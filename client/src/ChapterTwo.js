@@ -72,6 +72,7 @@ const ChapterTwo = () => {
                 group={slide.group}
                 form={slide.form}
                 key={i}
+                twitter={i === 0 ? true : false}
                 offset={slide.offset}
             /> )}
         </React.Fragment>
