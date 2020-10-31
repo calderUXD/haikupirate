@@ -35,12 +35,18 @@ const Slides = [
         offset: 5
     },
     {
-        img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/four_pmbzzh.png",
-        date: "2020-10-31T07:49:00",
-        timer: true,
-        link: null,
+        img: "https://res.cloudinary.com/haikupirate/image/upload/v1604124119/chaptertwo/october30_xonmpp.png",
+        date: "",
+        timer: false,
+        link: "https://gofile.io/d/1WS9xP",
         group: "c",
-        form: false
+        form: [
+            {l: "142", t:"99"},
+            {l: "169", t:"120"},
+            {l: "193", t:"152"},
+            {l: "219", t:"183"},
+            {l: "252", t:"195"}
+        ]
     },
     {
         img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/five_yp9v5b.png",
