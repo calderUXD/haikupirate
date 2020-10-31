@@ -41,6 +41,7 @@ const DaInput = styled.input`
     text-align:center;
     font-weight:bold;
     background-color: transparent;
+    font-size: 11px;
 `;
 
 const Count = styled.div`

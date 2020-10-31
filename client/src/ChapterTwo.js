@@ -35,7 +35,7 @@ const Slides = [
         offset: 5
     },
     {
-        img: "https://res.cloudinary.com/haikupirate/image/upload/v1604124119/chaptertwo/october30_xonmpp.png",
+        img: "https://res.cloudinary.com/haikupirate/image/upload/v1604126388/chaptertwo/october302_jcmbmw.png",
         date: "",
         timer: false,
         link: "https://gofile.io/d/1WS9xP",
