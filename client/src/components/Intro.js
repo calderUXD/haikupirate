@@ -31,7 +31,7 @@ const Input = styled.input`
     border: none;
     height:30px;
     width: 30px;
-    top: 294px;
+    top: 314px;
     left: ${({i}) => i};
     position: absolute;
     z-index: 9;
@@ -57,7 +57,7 @@ const Tile = ({state, handelChange}) => {
     return (
         <React.Fragment>
             <TileWrap>
-                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1602140247/chaptertwo/ch2-hi_hjzazq.png" alt="bg" />
+                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1605163024/chaptertwo/november3rd__chaptertwo-1_dmdgbs.png" alt="bg" />
                 {boxes.map((bg, i) => {
                     const id = [i + 1].toString();
                     return <Input 
@@ -65,7 +65,7 @@ const Tile = ({state, handelChange}) => {
                                 key={i} 
                                 id={`intro${id}`}
                                 name={bg}
-                                i={`${33 +(i * 47)}px`} 
+                                i={`${82 +(i * 38)}px`} 
                                 value={state[id]}
                                 tabIndex={i + 1}
                                 onChange={(e) => handelChange(e, id, "intro", bg)}
