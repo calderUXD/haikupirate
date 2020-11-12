@@ -7,6 +7,7 @@ import Maps from './Maps';
 import Maps2 from './ChapterTwo';
 import Two from './Two';
 import Clues from './Clues';
+import Home from './components/Home';
 
 ReactGA.initialize('UA-153423409-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
@@ -34,14 +35,15 @@ export default class App extends Component {
             <Router>
                 <COne>
                     <Switch>
-                        <Redirect exact from='/chaptertwo' to='/' />
+                        {/* <Redirect exact from='/chaptertwo' to='/' /> */}
+                        <Route exact path="/" component={Home} />
                         <Route exact path="/chapterone" component={Maps} />
                         <Route exact path="/hints" component={Clues} />
                     </Switch>
                 </COne>
                 <CTwo>
                     <Switch>
-                        <Route exact path="/" component={Two} />
+                        <Route exact path="/chaptertwo" component={Two} />
                         <Route exact path="/mondrian" component={Maps2} />
                     </Switch>
                 </CTwo>
