@@ -95,8 +95,12 @@ const Tile = ({state, handelChange}) => {
                 </a>  
             </TileWrap>
             <TileWrap2>
-                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1606097990/chaptertwo/explicatorymap_uf4eop.png" alt="bg" /> 
+                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1606099014/chaptertwo/explicatorymap_t_lmsxfz.png" alt="bg" /> 
             </TileWrap2>
+            <TileWrap2>
+                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1606099014/chaptertwo/explicatorymap_b_r9m1oe.png" alt="bg" /> 
+            </TileWrap2>
+
         </React.Fragment>
 
 
