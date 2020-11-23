@@ -20,6 +20,21 @@ const TileWrap = styled.div`
     }
 `;
 
+const TileWrap2 = styled.div`
+    position: relative;
+    width: 414px;
+    min-width: 414px;
+    text-align:center;
+    background: transparent;
+    position: relative;
+    > img {
+        max-width: 414px;
+        min-width: 414px;
+    }
+`;
+
+
+
 const boxes = [
     "grey",
     "blue",
@@ -79,6 +94,9 @@ const Tile = ({state, handelChange}) => {
                    
                 </a>  
             </TileWrap>
+            <TileWrap2>
+                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1606097990/chaptertwo/explicatorymap_uf4eop.png" alt="bg" /> 
+            </TileWrap2>
         </React.Fragment>
 
 
