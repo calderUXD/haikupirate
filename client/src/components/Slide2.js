@@ -87,7 +87,7 @@ const Puzzle = ({img, link, group, form, state, handelChange, offset, twitter}) 
 </React.Fragment>)};
 
 
-const Tile = ({img, timer, date, link, group, form, offset, twitter}) => {
+const Tile = ({img, timer, date, link, group, form, offset, twitter, noform}) => {
     const [complete, setComplete] = useState(false);
     const [password, setInput] = useState({
         1: "",
