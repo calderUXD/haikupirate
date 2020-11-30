@@ -49,9 +49,9 @@ const Slides = [
         ]
     },
     {
-        img: "https://res.cloudinary.com/haikupirate/image/upload/v1606707328/chaptertwo/fullmoon_iavn7g.png",
+        img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/five_yp9v5b.png",
         date: "2020-12-21T05:30:00",
-        timer: false,
+        timer: true,
         link: null,
         group: "d",
         form: false
