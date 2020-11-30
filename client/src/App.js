@@ -5,6 +5,7 @@ import styled from 'styled-components';
 //import Nav from "./components/Navigation";
 import Maps from './Maps';
 import Maps2 from './ChapterTwo';
+import Mb from './Mb';
 import Two from './Two';
 import Clues from './Clues';
 import Home from './components/Home';
@@ -45,6 +46,7 @@ export default class App extends Component {
                     <Switch>
                         <Route exact path="/chaptertwo" component={Two} />
                         <Route exact path="/mondrian" component={Maps2} />
+                        <Route exact path="/mb" component={Mb} />
                     </Switch>
                 </CTwo>
             </Router>
