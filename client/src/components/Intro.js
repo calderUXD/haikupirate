@@ -89,7 +89,7 @@ const Tile = ({state, handelChange}) => {
                 <Print href="https://gofile.io/d/f13Uyb" target="_blank"><img src={print} /></Print>
             </TileWrap>
             <TileWrap>
-                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1603073220/chaptertwo/intro2_Page_2_czqjcs.png" alt="bg" />
+                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1606710428/chaptertwo/mapblue_fu4pzs.png" alt="bg" />
                 <a href="https://twitter.com/haiku_pirate" target="_blank" style={{display:"block", textAlign:"center", position: 'absolute', bottom: "10px", left: "0px", right: "0px", padding: "10px 0", height: "50px"}}>
                    
                 </a>  
