@@ -49,12 +49,18 @@ const Slides = [
         ]
     },
     {
-        img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/five_yp9v5b.png",
-        date: "2020-12-21T05:30:00",
-        timer: true,
-        link: null,
+        img: "https://res.cloudinary.com/haikupirate/image/upload/v1608513104/chaptertwo/solsticeartwork_hcsubn.png",
+        date: "",
+        timer: false,
+        link: "https://gofile.io/d/9Gp1qM",
         group: "d",
-        form: false
+        form: [
+            {l: "148", t:"133"},
+            {l: "172", t:"133"},
+            {l: "196", t:"133"},
+            {l: "220", t:"133"},
+            {l: "244", t:"133"}
+        ]
     },
     {
         img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/six_thznsb.png",
