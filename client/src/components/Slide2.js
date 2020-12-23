@@ -87,7 +87,7 @@ const Puzzle = ({img, link, group, form, state, handelChange, offset, twitter}) 
 </React.Fragment>)};
 
 
-const Tile = ({img, timer, date, link, group, form, offset, twitter, noform}) => {
+const Tile = ({img, timer, date, link, group, form, offset, twitter, check, noform}) => {
     const [complete, setComplete] = useState(false);
     const [password, setInput] = useState({
         1: "",
@@ -158,6 +158,7 @@ const Tile = ({img, timer, date, link, group, form, offset, twitter, noform}) =>
 
     return (
         <TileWrap>
+            {check !== undefined && password.isValid ? <div style={{position: "absolute", top:check.t, left:check.l}}><svg dataIcon="circle-check" viewBox="0 0 16 20" x="0px" y="0px" style={{height:"40px", fill: "green"}}><path d="M8 0c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm3 4.594l1.406 1.406-5.406 5.406-3.406-3.406 1.406-1.406 2 2 4-4z"/></svg></div>: null}
             {timer ? (
                 <React.Fragment>
                     {!complete && <Count><Countdown

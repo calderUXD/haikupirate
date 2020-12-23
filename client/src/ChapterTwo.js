@@ -17,7 +17,8 @@ const Slides = [
         link: "https://gofile.io/d/I9Azas",
         group: "a",
         form: true,
-        offset: 0
+        offset: 0,
+        check:{l: "191px", t:"288px"},
     },
     {
         img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/three_qi2dss.png",
@@ -32,6 +33,7 @@ const Slides = [
             {l: "255", t:"116.5"},
             {l: "296", t:"145"}
         ],
+        check:{l: "330px", t:"145px"},
         offset: 5
     },
     {
@@ -46,7 +48,8 @@ const Slides = [
             {l: "193", t:"152"},
             {l: "219", t:"183"},
             {l: "252", t:"195"}
-        ]
+        ],
+        check:{l: "285px", t:"188px"}
     },
     {
         img: "https://res.cloudinary.com/haikupirate/image/upload/v1608513104/chaptertwo/solsticeartwork_hcsubn.png",
@@ -60,7 +63,8 @@ const Slides = [
             {l: "196", t:"133"},
             {l: "220", t:"133"},
             {l: "244", t:"133"}
-        ]
+        ],
+        check:{l: "285px", t:"130px"}
     },
     {
         img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/six_thznsb.png",
@@ -83,6 +87,7 @@ const ChapterTwo = () => {
                 link={slide.link}
                 group={slide.group}
                 form={slide.form}
+                check={slide.check}
                 key={i}
                 twitter={i === 0 ? true : false}
                 offset={slide.offset}
