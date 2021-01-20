@@ -68,7 +68,7 @@ const Slides = [
     },
     {
         img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/six_thznsb.png",
-        date: "2021-02-09T02:33:00",
+        date: "2021-02-27T03:17:00",
         timer: true,
         link: null,
         group: "e",
