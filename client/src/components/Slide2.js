@@ -94,19 +94,19 @@ const Tile = ({img, timer, date, link, group, form, offset, twitter, check, nofo
         2: "",
         3: "",
         4: "",
-        6: "",
+        5: "",
         pass: "",
         isValid: false
     })
 
     useEffect(() => {
         if(password.pass.length === 5 && password.isValid === false){
-            console.log("sending");
+            //console.log("sending");
             axios.post(`/api/validate2/${group}`, {code: password.pass})
                 .then(res => {
                     if(res.data === true){
                         setInput({...password, isValid: true});
-                        console.log("pass");
+                        ///console.log("pass");
                         
                         ReactGA.event({
                             category: 'Code Entry Success',
@@ -120,7 +120,7 @@ const Tile = ({img, timer, date, link, group, form, offset, twitter, check, nofo
                             action: `Entered Invalid Code ${group}`
                         });
 
-                        console.log("fail")
+                        ///console.log("fail")
 
                         setInput({
                             1: "",
@@ -138,7 +138,7 @@ const Tile = ({img, timer, date, link, group, form, offset, twitter, check, nofo
 
     const handelChange = (e, id, group, box) => {
         //setInput({...password, );
-        console.log("handelChange", e.target.value);
+        ///console.log("handelChange", e.target.value);
         setInput({
             ...password,
             [id]: e.target.value,

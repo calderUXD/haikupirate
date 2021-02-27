@@ -67,12 +67,19 @@ const Slides = [
         check:{l: "285px", t:"130px"}
     },
     {
-        img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/six_thznsb.png",
-        date: "2021-02-27T03:17:00",
-        timer: true,
-        link: null,
+        img: "https://res.cloudinary.com/haikupirate/image/upload/v1614395342/chaptertwo/last_zz4tpe.png",
+        date: "",
+        timer: false,
+        link: "https://gofile.io/d/SmSP5A",
         group: "e",
-        form: false
+        form: [
+            {l: "148", t:"133"},
+            {l: "172", t:"133"},
+            {l: "196", t:"133"},
+            {l: "220", t:"133"},
+            {l: "244", t:"133"}
+        ],
+        check:{l: "285px", t:"130px"}
     }
 
 ]
