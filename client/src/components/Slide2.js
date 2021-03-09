@@ -87,7 +87,7 @@ const Puzzle = ({img, link, group, form, state, handelChange, offset, twitter}) 
 </React.Fragment>)};
 
 
-const Tile = ({img, timer, date, link, group, form, offset, twitter, check, noform}) => {
+const Tile = ({img, timer, date, link, group, form, offset, twitter, check, winner, buildWinner}) => {
     const [complete, setComplete] = useState(false);
     const [password, setInput] = useState({
         1: "",
@@ -106,6 +106,9 @@ const Tile = ({img, timer, date, link, group, form, offset, twitter, check, nofo
                 .then(res => {
                     if(res.data === true){
                         setInput({...password, isValid: true});
+                        //console.log("pass", password.pass);
+                        buildWinner({...winner, [group]: password.pass});
+                        //buildWinner({...winner, pass: winner.a + winner.b + winner.c + winner.d + winner.e})
                         ///console.log("pass");
                         
                         ReactGA.event({

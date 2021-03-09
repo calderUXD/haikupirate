@@ -30,10 +30,13 @@ router.get("/checknum/:name/:code", (req, res) => {
 });
 
 router.get('/info', async (req, res) => {
-  const info = await gameInfoModel.find({});
+  console.log("poop");
+});
 
+router.get('/v2winner/:code', async (req, res) => {
+  const winner = await codesModel2.findOne({code: req.params.code}, 'email message code');
   try {
-    res.send(info[0]);
+    res.send(winner);
   } catch (err) {
     res.status(500).send(err);
   }

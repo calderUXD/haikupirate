@@ -1,5 +1,7 @@
 import React from 'react';
 import Tile from './components/Slide2';
+import ReactGA from 'react-ga';
+import axios from "axios";
 
 const Slides = [
     {
@@ -85,6 +87,64 @@ const Slides = [
 ]
 
 const ChapterTwo = () => {
+    const [winner, buildWinner] = React.useState({
+        pass: "",
+        a:"",
+        b:"",
+        c:"",
+        d:"",
+        e:"",
+        complete: false
+    })
+
+    //buildWinner({...winner, pass: winner.a + winner.b + winner.c + winner.d + winner.e})
+
+    React.useEffect(() => {
+
+        let { a, b, c, d, e} = winner;
+        let pass = "";
+
+        if(pass.concat(a,b,c,d,e).length === 25){
+            axios.post(`/api/validate2/final`, {code: pass.concat(a,b,c,d,e)})
+                .then(res => {
+                    if(res.data === true){
+                        //console.log("done did it")
+                        
+                        ReactGA.event({
+                            category: 'Code Entry Success',
+                            label: `All Codes Entered`,
+                            action: `Entered Valid Code All Codes`
+                        });
+
+                        window.location.href = `http://www.haikupirate.com/winner/${pass.concat(a,b,c,d,e)}`;
+                    } else {
+                        ReactGA.event({
+                            category: 'Code Entry Invalid',
+                            label: `All Coded Entered`,
+                            action: `Entered Invalid Code All Codes`
+                        });
+
+                        //console.log("fail")
+
+                        buildWinner({
+                            pass: "",
+                            a:"",
+                            b:"",
+                            c:"",
+                            d:"",
+                            e:"",
+                            complete: false
+                        })
+                    }
+                })
+            //console.log("submit now")
+        } else {
+           console.log("lenght", pass.concat(a,b,c,d,e).length) 
+        }
+
+    });
+
+    //console.log("winner", winner);
     return (
         <React.Fragment>
             {Slides.map((slide, i) => <Tile
@@ -98,6 +158,8 @@ const ChapterTwo = () => {
                 key={i}
                 twitter={i === 0 ? true : false}
                 offset={slide.offset}
+                winner={winner}
+                buildWinner={buildWinner}
             /> )}
         </React.Fragment>
         
