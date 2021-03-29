@@ -8,6 +8,7 @@ import Maps2 from './ChapterTwo';
 import Mb from './Mb';
 import Winner from './Winner';
 import Two from './Two';
+import Three from './Three';
 import Clues from './Clues';
 import Home from './components/Home';
 
@@ -49,6 +50,11 @@ export default class App extends Component {
                         <Route exact path="/mondrian" component={Maps2} />
                         <Route exact path="/mb" component={Mb} />
                         <Route path="/winner/:winner" component={Winner} />
+                    </Switch>
+                </CTwo>
+                <CTwo>
+                    <Switch>
+                        <Route exact path="/thesnail" component={Three} />
                     </Switch>
                 </CTwo>
             </Router>
