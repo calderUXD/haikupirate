@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Slides = [
     {
-        img: "https://res.cloudinary.com/haikupirate/image/upload/v1602142509/chaptertwo/one_zivcwd.png",
+        img: "https://res.cloudinary.com/haikupirate/image/upload/v1618981438/chaptertwo/solved_pdjxc4.png",
         date: "",
         timer: false,
         link: null,

@@ -46,9 +46,9 @@ export default class App extends Component {
                 </COne>
                 <CTwo>
                     <Switch>
-                        <Route exact path="/chaptertwo" component={Two} />
+                        <Redirect exact from='/mondrian' to='/chaptertwo' />
+                        <Route exact path="/chaptertwo" component={Maps2} />
                         {/* <Route exact path="/mondrian" component={Maps2} /> */}
-                        <Route exact path="/mondrian" component={Two} />
                         <Route exact path="/mb" component={Mb} />
                         <Route path="/winner/:winner" component={Winner} />
                     </Switch>
