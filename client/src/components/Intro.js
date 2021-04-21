@@ -72,6 +72,9 @@ const Tile = ({state, handelChange}) => {
     return (
         <React.Fragment>
             <TileWrap>
+                <img src="https://res.cloudinary.com/haikupirate/image/upload/v1618981438/chaptertwo/solved_pdjxc4.png" alt="SOLVED" />
+            </TileWrap>
+            {/* <TileWrap>
                 <img src="https://res.cloudinary.com/haikupirate/image/upload/v1605163024/chaptertwo/november3rd__chaptertwo-1_dmdgbs.png" alt="bg" />
                 {boxes.map((bg, i) => {
                     const id = [i + 1].toString();
@@ -99,7 +102,7 @@ const Tile = ({state, handelChange}) => {
             </TileWrap2>
             <TileWrap2>
                 <img src="https://res.cloudinary.com/haikupirate/image/upload/v1606099014/chaptertwo/explicatorymap_b_r9m1oe.png" alt="bg" /> 
-            </TileWrap2>
+            </TileWrap2> */}
 
         </React.Fragment>
 
